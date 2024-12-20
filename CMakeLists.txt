@@ -52,7 +52,7 @@ function(generate_pch_for_target TARGET)
         add_custom_target(generate_pch_for_${TARGET}
                 COMMAND $<TARGET_FILE:pch_generator>
                 ${CMAKE_CURRENT_BINARY_DIR}/pch/${TARGET}
-                ${CMAKE_CURRENT_BINARY_DIR}/pch/${TARGET}/__${CMAKE_CURRENT_BINARY_DIR}_pch.hpp
+                ${CMAKE_CURRENT_BINARY_DIR}/pch/${TARGET}/__${TARGET}_pch.hpp
                 ${CMAKE_CURRENT_BINARY_DIR}/${TARGET}_sources.txt
                 ${CMAKE_CURRENT_BINARY_DIR}/${TARGET}_defines.txt
                 "C:/Program Files/LLVM/bin/clang++.exe"
