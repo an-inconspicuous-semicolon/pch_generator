@@ -61,5 +61,5 @@ function(generate_pch_for_target TARGET)
         )
 
         add_dependencies(${TARGET} generate_pch_for_${TARGET})
-        target_precompile_headers(${TARGET} PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/pch/${TARGET}/__${CMAKE_CURRENT_BINARY_DIR}_pch.hpp)
+        target_precompile_headers(${TARGET} PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/pch/${TARGET}/__${TARGET}_pch.hpp)
 endfunction()
