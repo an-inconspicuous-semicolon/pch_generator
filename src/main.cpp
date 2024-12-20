@@ -26,7 +26,7 @@ void prepare_file(const std::string& raw_source_path, const std::string& working
         std::string temp = define;
         string_replace(temp, "#define", "@@@define");
         string_insert(contents, temp + '\n', pos + offset);
-        offset += temp.size() + 1;
+        offset += static_cast<unsigned int>(temp.size()) + 1;
     }
 
     file_write(working_file_path, contents);
@@ -77,6 +77,8 @@ void generate_output(const std::set<std::string>& includes, const std::string& o
         output << include << '\n';
     }
 
+    std::string contents = file_read(output_file);
+    if (contents == output.str()) return;
     file_write(output_file, output.str());
 }
 
